@@ -1,0 +1,16 @@
+body {
+  min-height: 100vh;
+  max-width: 100vw;
+}
+
+nav > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo {
+  display: flex;
+  flex-direction: row;
+  gap: 0.3rem;
+  margin-bottom: 0.2rem;
+}
