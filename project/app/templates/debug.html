@@ -1,0 +1,17 @@
+{% extends "mainbase.html" %} {% block content %}
+
+{% if todos is not none %}
+  <ul>
+    {% for todo in todos %}
+    <li>
+      <div class="todo">
+        {{ todo.task }}
+        {{ todo.id }}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+
+{% endblock %}

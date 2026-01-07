@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>App</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+  </head>
+  <body>
+    <nav class="bg-green-100">
+      <div>
+        <a href={% url 'home' %}>Home</a>
+        <form method="post" action={% url 'logout' %} novalidate>
+          {% csrf_token %}
+          <button type="submit">logout</button>
+        </form>
+      </div>
+    </nav>
+    <main>{% block content %} {% endblock %}</main>
+  </body>
+</html>

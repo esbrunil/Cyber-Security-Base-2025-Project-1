@@ -1,0 +1,11 @@
+{% extends "mainbase.html" %}
+
+{% block content %} 
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button name="edit" type="submit">Save</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "mainbase.html" %}
+
+{% block content %}
+
+<h1>Todos</h1>
+
+{% if todos is not none %}
+  <ul>
+    {% for todo in todos %}
+    <li>
+      <div class="todo">
+        {{ todo.task }} <a href="{% url 'todo' todo.id %}">edit</a> 
+        <form method="post" action={% url 'delete' todo.id %} novalidate>
+          {% csrf_token %}
+          <button type="submit">delete</button>
+        </form>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+<form method="post" action={% url 'home' %} novalidate>
+  {% csrf_token %}
+  <div>
+    {{ form.as_p }} 
+    <button type="submit">Add</button>
+  </div>
+</form>
+
+{% endblock %}
+
