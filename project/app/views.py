@@ -91,13 +91,6 @@ def homeView(request):
 @csrf_exempt
 def loginView(request):
     if request.method == "POST":
-
-        user = User.objects.get(username="bob")
-        print(user.id)
-        user.set_password("password")
-        user.save()
-
-
         form = LoginForm(request.POST)
 
         username = request.POST["username"]
